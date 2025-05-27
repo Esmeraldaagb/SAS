@@ -37,10 +37,10 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-12 lg:px-20 px-2 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4">
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nous contacter</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Nous contacter</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Discutons de vos projets et de comment nos divisions peuvent vous aider à atteindre vos objectifs.
             </p>

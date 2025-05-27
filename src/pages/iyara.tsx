@@ -55,7 +55,7 @@ const Iyara: React.FC = () => {
       <div className="container mx-auto px-6">
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#D39E00] mb-4">Iyara</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#D39E00] mb-4">Iyara</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Iyara offre une combinaison unique de diversité de flotte, de personnalisation de services et d'engagement envers la satisfaction client.
             </p>
@@ -76,7 +76,7 @@ const Iyara: React.FC = () => {
                     <CardContent>
                       <ul className=" list-inside text-sm text-gray-600 space-y-1">
                         {service.description.map((item, i) => (
-                          <li key={i}>{item}</li>
+                          <li key={i}> • {item}</li>
                         ))}
                       </ul>
                     </CardContent>
@@ -87,32 +87,55 @@ const Iyara: React.FC = () => {
             </div>
           </div>
 
-        <AnimatedSection animation="fade-up" delay={400} className="mt-16">
+          <AnimatedSection animation="fade-up" delay={400} className="mt-16">
           <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="p-6 flex items-center">
-                <div>
-                  <h3 className="text-xl text-center font-bold text-[#2C2C2C] mb-4">
+            <div className="relative grid grid-cols-1 md:grid-cols-2">
+
+              <div className="block md:hidden relative h-72 overflow-hidden">
+                <Image
+                  src={img1}
+                  alt="iyara"
+                  fill
+                  className="object-cover object-center"
+                />
+    
+               <div className="absolute inset-0 bg-white/80 backdrop-blur-sm md:hidden"></div>
+              </div>
+
+              <div className="absolute md:static inset-0 p-6 flex items-center z-20">
+                <div className="w-full py-3">
+                  <h3 className="text-xl text-center font-bold  text-[#2C2C2C] mb-4">
                     Vivez une expérience complète et innovante !
                   </h3>
-                  <p className="text-[#7A7A7A] text-center mb-6 leading-relaxed">
+                  <p className=" text-center text-[#7A7A7A] mb-6 leading-relaxed">
                     En choisissant IYARA, vous bénéficiez d'une gamme étendue de véhicules, depuis les voitures personnelles jusqu'aux moteurs de chantier, accompagnée de solutions sur mesure adaptées à votre entreprise.
                   </p>
-                  <a href="" className="absolute bottom-2 text-[#D39E00] font-semibold flex gap-2">
-                    Visiter le site <ExternalLink className="h-5 w-5" />
-                  </a>
+                  <div className="md:block hidden absolute bottom-1">
+                    <a href="#" className="text-[#FFD700] font-semibold flex gap-2">
+                      Visiter le site <ExternalLink className="h-5 w-5" />
+                    </a>
+                  </div>
+
+                  <div className="md:hidden flex items-center justify-center">
+                    <a href="#" className="text-[#FFD700] font-semibold flex gap-2">
+                      Visiter le site <ExternalLink className="h-5 w-5" />
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <Image
-                src={img1}
-                alt="iyara"
-                className="w-full h-auto max-h-80 object-cover object-center rounded-r-xl border-r-4 border-[#D39E00]"
-              />
-
+              <div className="hidden md:block">
+                <Image
+                  src={img1}
+                  alt="iyara"
+                  className="w-full h-auto max-h-80 object-cover object-center rounded-r-xl border-r-4 border-[#D39E00]"
+                />
+              </div>
             </div>
           </div>
         </AnimatedSection>
+
+
       </div>
     </section>
   );

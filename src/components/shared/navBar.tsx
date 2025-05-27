@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
           : 'bg-transparent py-6'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto flex justify-between items-center">
         
         <Link href="/">
           <Image src="/logo.png" alt="Logo" width={70} height={70}/>

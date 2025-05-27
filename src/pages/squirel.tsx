@@ -46,7 +46,7 @@ const Squirel: React.FC = () => {
       <div className="container mx-auto px-6">
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#C0392B] mb-4">TechCorp</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#C0392B] mb-4">Squirel</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Notre division technologique conçoit des solutions innovantes pour accélérer votre transformation digitale et votre croissance.
             </p>
@@ -54,27 +54,49 @@ const Squirel: React.FC = () => {
         </AnimatedSection>
 
         <AnimatedSection animation="fade-up" delay={200} className="mb-16">
-          <div className="bg-white rounded-xl overflow-hidden shadow-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-               <Image
-                src={img1}
-                alt="iyara"
-                className="w-full h-auto max-h-80 object-cover object-center rounded-l-xl border-l-4 border-[#C0392B]"
-              />
-              <div className="p-10 flex items-center">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#2C2C2C] mb-4"> Vivez une expérience complète et innovante !</h3>
-                  <p className="text-[#7A7A7A] text-center mb-6 leading-relaxed">Nous proposons des services étendus incluant le renforcement sur les réseaux sociaux, la communication, les conseils stratégiques, la gestion de serveurs, la sécurité, la vente et la gestion d'hébergement.</p>
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+              <div className="relative grid grid-cols-1 md:grid-cols-2">
+                <div className="hidden md:block">
+                  <Image
+                    src={img1}
+                    alt="iyara"
+                    className="w-full h-auto max-h-80 object-cover object-center rounded-l-xl border-l-4 border-[#C0392B]"
+                  />
                 </div>
+                <div className="relative flex items-center p-4 sm:p-10">
+                  <div
+                    className="absolute inset-0 block md:hidden bg-cover bg-center"
+                    style={{ backgroundImage: `url(${img1.src})`, opacity: 0.1 }}
+                  ></div>
 
-                <a href="" className="absolute bottom-2 right-4 text-[#C0392B] font-semibold flex gap-2">
-                    Visiter le site <ExternalLink className="h-5 w-5" />
-                  </a>
+                    <div className="relative z-10 w-full p-4 sm:p-6 rounded-lg">
+                      <h3 className="text-xl lg:text-2xl font-bold text-[#2C2C2C] mb-4 text-center md:text-left">
+                        Vivez une expérience complète et innovante !
+                      </h3>
+                      <p className="text-[#7A7A7A] text-center md:text-left mb-6 leading-relaxed text-sm">
+                        Nous proposons des services étendus incluant le renforcement sur les réseaux sociaux, la communication, les conseils stratégiques, la gestion de serveurs, la sécurité, la vente et la gestion d'hébergement.
+                      </p>
+
+                      <div className="hidden md:block absolute bottom-1 right-4">
+                        <a
+                          href="#"
+                          className="text-[#C0392B] font-semibold flex gap-2 hover:underline"
+                        >
+                          Visiter le site <ExternalLink className="h-5 w-5" />
+                        </a>
+                      </div>
+
+                      <div className="md:hidden flex items-center justify-center">
+                    <a href="#" className="text-[#C0392B] font-semibold flex gap-2">
+                      Visiter le site <ExternalLink className="h-5 w-5" />
+                    </a>
+                  </div>
+                    </div>
+                </div>
               </div>
             </div>
-          </div>
-        </AnimatedSection>
-        
+       </AnimatedSection>
+
         <div className="mb-6 flex items-center justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -84,16 +106,16 @@ const Squirel: React.FC = () => {
               delay={index * 200 + 400}
             >
              <Card>
-                   <CardHeader className="flex flex-row items-center gap-3">
-                        <div>{service.icon}</div>
-                        <div>
-                          <CardTitle className="text-base text-gray-800">{service.title}</CardTitle>
-                        </div>
-                   </CardHeader>
+                <CardHeader className="flex flex-row items-center gap-3">
+                    <div>{service.icon}</div>
+                      <div>
+                        <CardTitle className="text-base text-gray-800">{service.title}</CardTitle>
+                      </div>
+                </CardHeader>
                     <CardContent>
                         <ul className=" list-inside text-sm text-gray-600 space-y-1">
                           {service.description.map((item, i) => (
-                            <li key={i}>{item}</li>
+                            <li key={i}>• {item}</li>
                           ))}
                         </ul>
                       </CardContent>
