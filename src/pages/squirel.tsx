@@ -42,7 +42,7 @@ const Squirel: React.FC = () => {
   ];
 
   return (
-    <section id="technology" className="lg:px-20 px-2 py-20 bg-white">
+    <section id="technology" className="lg:px-20 px-2 lg:py-20 py-10 bg-white">
       <div className="container mx-auto px-6">
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
@@ -63,6 +63,7 @@ const Squirel: React.FC = () => {
                     className="w-full h-auto max-h-80 object-cover object-center rounded-l-xl border-l-4 border-[#C0392B]"
                   />
                 </div>
+                
                 <div className="relative flex items-center p-4 sm:p-10">
                   <div
                     className="absolute inset-0 block md:hidden bg-cover bg-center"
@@ -105,7 +106,7 @@ const Squirel: React.FC = () => {
               animation="fade-up"
               delay={index * 200 + 400}
             >
-             <Card>
+             <Card className='border-b-4 border-[#C0392B] border-t-0 border-l-0 border-r-0'>
                 <CardHeader className="flex flex-row items-center gap-3">
                     <div>{service.icon}</div>
                       <div>

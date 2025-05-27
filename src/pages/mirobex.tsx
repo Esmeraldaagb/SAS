@@ -3,9 +3,9 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import AnimatedSection from '@/components/animatedSection';
-import { TrendingUp, Globe, FileText, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-
+import {  ExternalLink, BrainCog, Handshake, Network } from 'lucide-react';
+import Image from 'next/image';
+import img1 from "@/app/assets/mirobex.png"
 type Service = {
   icon: React.ReactNode;
   title: string;
@@ -15,8 +15,8 @@ type Service = {
 const Mirabex: React.FC = () => {
   const services: Service[] = [
     {
-      icon: <TrendingUp className="h-10 w-10 text-[#0400F0]" />,
-      title: 'Stratégie d\'Expansion',
+      icon: <Handshake className="h-10 w-10 text-[#0400F0]" />,
+      title: 'Représentation commerciale',
       description: [
         'Suivi en temps réel des véhicules.',
         'Optimisation des itinéraires pour réduire les délais.',
@@ -24,8 +24,8 @@ const Mirabex: React.FC = () => {
       ]
     },
     {
-      icon: <Globe className="h-10 w-10 text-[#0400F0]" />,
-      title: 'Études de Marché',
+      icon: <BrainCog className="h-10 w-10 text-[#0400F0]" />,
+      title: 'Conseil en entreprise',
       description: [
         'Suivi en temps réel des véhicules.',
         'Optimisation des itinéraires pour réduire les délais.',
@@ -33,8 +33,8 @@ const Mirabex: React.FC = () => {
       ]
     },
     {
-      icon: <FileText className="h-10 w-10 text-[#0400F0]" />,
-      title: 'Conformité Réglementaire',
+      icon: <Network className="h-10 w-10 text-[#0400F0]" />,
+      title: 'Externalisation des services',
       description: [
         'Suivi en temps réel des véhicules.',
         'Optimisation des itinéraires pour réduire les délais.',
@@ -44,7 +44,7 @@ const Mirabex: React.FC = () => {
   ];
 
   return (
-    <section id="consulting" className="lg:px-20 px-2 py-20 bg-gray-50">
+    <section id="consulting" className="lg:px-20 px-2 lg:py-20 py-10 bg-gray-50">
       <div className="container mx-auto px-6">
         <AnimatedSection animation="fade-up">
           <div className="text-center mb-16">
@@ -59,7 +59,7 @@ const Mirabex: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <AnimatedSection key={service.title} animation="fade-up" delay={index * 200}>
-                <Card className="p-2 hover:shadow-lg transition-all duration-300">  
+                <Card className="p-2 hover:shadow-lg transition-all duration-300 border-b-4 border-[#0400F0] border-t-0 border-l-0 border-r-0">  
                   <CardHeader className="flex flex-row items-center gap-3">
                         <div>{service.icon}</div>
                         <div>
@@ -72,8 +72,7 @@ const Mirabex: React.FC = () => {
                             <li key={i}>• {item}</li>
                           ))}
                         </ul>
-                      </CardContent>
-            
+                      </CardContent> 
                 </Card>
               </AnimatedSection>
             ))}
@@ -82,47 +81,45 @@ const Mirabex: React.FC = () => {
 
         <AnimatedSection animation="fade-up" delay={400} className="mt-16">
           <div className="bg-gradient-to-r from-white to-[#cfcfdb] rounded-xl overflow-hidden shadow-lg">
-            <div className="relative grid grid-cols-1 lg:grid-cols-3">
+            <div className="grid grid-cols-1 lg:grid-cols-4 relative">
 
               <div className="block lg:hidden relative h-[420px] sm:h-[500px] overflow-hidden">
-                <div
-                  className="absolute inset-0 bg-cover bg-center blur-sm scale-105"
-                  style={{
-                    backgroundImage:
-                      'url(https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)',
-                  }}
-                ></div>
-                  <div className="absolute inset-0 bg-white/80 backdrop-blur-sm md:hidden"></div>
-
+                <Image
+                  src={img1}
+                  alt="mirobex"
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-[#3c3a3a2b] backdrop-blur-sm md:hidden"></div>
               </div>
 
-              <div className="absolute lg:static inset-0 lg:col-span-2 p-6 md:p-10 flex flex-col justify-between z-10">
+              <div className="lg:col-span-3 p-6 md:p-10 flex flex-col justify-between z-10 relative">
                 <div>
-                  <h3 className="lg:text-2xl text-lg font-bold text-[#2C2C2C] mb-4">
-                    Pourquoi choisir ConseilCorp pour votre expansion internationale ?
+                  <h3 className="lg:text-2xl text-center text-lg font-bold text-black lg:text-[#2C2C2C] mb-4">
+                    Pourquoi choisir Mirobex pour votre expansion internationale ?
                   </h3>
                   <p className="text-[#2C2C2C] text-xs lg:text-sm mb-6 leading-relaxed">
                     Avec plus de 15 ans d'expérience dans l'accompagnement d'entreprises à l'international, notre équipe d'experts vous guide à chaque étape de votre expansion. Nous combinons une connaissance approfondie des marchés locaux avec une vision stratégique globale.
                   </p>
 
-                  <Card className="bg-[#0400f053] lg:p-6 p-2 rounded-lg backdrop-blur-sm mb-6">
+                  <Card className="bg-[#0400f02f] lg:p-6 p-2 rounded-lg backdrop-blur-sm mb-6">
                     <CardContent>
                       <h4 className="text-[#7A7A7A] font-semibold lg:text-lg text-sm mb-2">Clientèle visée</h4>
                       <ul className="space-y-4">
                         <li className="flex flex-col md:flex-row gap-2">
-                          <p className="text-[#1B263B] font-semibold lg:text-md text-sm">Entreprises internationales</p>
+                          <p className="text-[#1B263B]  font-semibold lg:text-md text-sm">Entreprises internationales</p>
                           <p className="text-[#7A7A7A] text-sm hidden lg:block">: Succursale / mandat de gestion / Représentation / joint-venture</p>
                         </li>
                         <li className="flex flex-col md:flex-row gap-2">
-                          <p className="text-[#1B263B] font-semibold lg:text-md text-sm">Commerçants et boutiques locales</p>
+                          <p className="text-[#1B263B]  font-semibold lg:text-md text-sm">Commerçants et boutiques locales</p>
                           <p className="text-[#7A7A7A] text-sm hidden lg:block">: Etablissements / PME recherchant des solutions pour optimiser leurs activités</p>
                         </li>
                         <li className="flex flex-col md:flex-row gap-2">
-                          <p className="text-[#1B263B] font-semibold lg:text-md text-sm">Sociétés de taille moyenne</p>
+                          <p className="text-[#1B263B]  font-semibold lg:text-md text-sm">Sociétés de taille moyenne</p>
                           <p className="text-[#7A7A7A] text-sm hidden lg:block">: Externalisation des services / Franchises / Mandat de gestion</p>
                         </li>
                         <li className="flex flex-col md:flex-row gap-2">
-                          <p className="text-[#1B263B] font-semibold lg:text-md text-sm">Gouvernement et ONG</p>
+                          <p className="text-[#1B263B]  font-semibold lg:text-md text-sm">Gouvernement et ONG</p>
                           <p className="text-[#7A7A7A] text-sm hidden lg:block">: Joint-venture / Partenariat Public-Privé</p>
                         </li>
                       </ul>
@@ -137,23 +134,24 @@ const Mirabex: React.FC = () => {
                 </div>
 
                 <div className="md:hidden flex items-center justify-center">
-                    <a href="#" className="text-[#0400F0] font-semibold flex gap-2">
-                      Visiter le site <ExternalLink className="h-5 w-5" />
-                    </a>
-                  </div>
+                  <a href="#" className="text-[#0400F0] font-semibold flex gap-2">
+                    Visiter le site <ExternalLink className="h-5 w-5" />
+                  </a>
+                </div>
               </div>
 
-              <div
-                className="hidden lg:block h-full bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    'url(https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)',
-                }}
-              ></div>
-
+              <div className="hidden lg:block w-full h-full relative">
+                <Image
+                  src={img1}
+                  alt="mirobex"
+                  fill
+                  className="object-cover object-center w-full h-full border-r-4 border-[#0400F0]"
+                />
+              </div>
             </div>
           </div>
-        </AnimatedSection>
+      </AnimatedSection>
+
       </div>
     </section>
   );
