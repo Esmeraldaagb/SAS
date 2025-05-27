@@ -98,11 +98,11 @@ const Mirabex: React.FC = () => {
                   <h3 className="lg:text-2xl text-center text-lg font-bold text-black lg:text-[#2C2C2C] mb-4">
                     Pourquoi choisir Mirobex pour votre expansion internationale ?
                   </h3>
-                  <p className="text-[#2C2C2C] text-xs lg:text-sm mb-6 leading-relaxed">
+                  <p className="text-[#2C2C2C] text-sm lg:text-md mb-6 leading-relaxed">
                     Avec plus de 15 ans d'expérience dans l'accompagnement d'entreprises à l'international, notre équipe d'experts vous guide à chaque étape de votre expansion. Nous combinons une connaissance approfondie des marchés locaux avec une vision stratégique globale.
                   </p>
 
-                  <Card className="bg-[#0400f02f] lg:p-6 p-2 rounded-lg backdrop-blur-sm mb-6">
+                  <Card className="bg-[#0400f02f] lg:p-4 p-2 rounded-lg backdrop-blur-sm mb-6">
                     <CardContent>
                       <h4 className="text-[#7A7A7A] font-semibold lg:text-lg text-sm mb-2">Clientèle visée</h4>
                       <ul className="space-y-4">
@@ -127,7 +127,7 @@ const Mirabex: React.FC = () => {
                   </Card>
                 </div>
 
-                <div className="md:block hidden absolute bottom-1">
+                <div className="md:block hidden absolute bottom-3">
                   <a href="#" className="text-[#0400F0] font-semibold flex items-center gap-2 hover:underline">
                     Visiter le site <ExternalLink className="h-5 w-5" />
                   </a>

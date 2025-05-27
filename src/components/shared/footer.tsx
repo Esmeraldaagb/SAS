@@ -6,7 +6,7 @@ import Image from 'next/image';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#2F2F2F] text-white lg:px-20 px-6 lg:pt-12 pt-6 pb-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           <div>
