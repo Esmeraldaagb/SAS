@@ -1,9 +1,9 @@
 "use client";
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
-import AnimatedSection from '@/components/animatedSection';
-import Image from 'next/image';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import AnimatedSection from "@/components/animatedSection";
+import Image from "next/image";
 const Hero: React.FC = () => {
   const scrollToNextSection = () => {
     const nextSection = document.getElementById('transport');
@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
       </div>
 
     
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <button onClick={scrollToNextSection} className="flex flex-col items-center focus:outline-none">
           <span className="text-sm mb-2">Découvrir</span>
           <ChevronDown className="h-6 w-6" />

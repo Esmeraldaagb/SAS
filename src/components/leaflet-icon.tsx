@@ -1,17 +1,46 @@
-import L from 'leaflet';
-import iconUrl from 'leaflet/dist/images/marker-icon.png';
-import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
-import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
+// components/MapView.tsx
+"use client";
 
-// Corrige les chemins des icônes Leaflet
-const DefaultIcon = L.icon({
-  iconUrl,
-  iconRetinaUrl,
-  shadowUrl,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
+import { useEffect, useRef } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
-L.Marker.prototype.options.icon = DefaultIcon;
+import iconUrlImport from 'leaflet/dist/images/marker-icon.png';
+import iconRetinaUrlImport from 'leaflet/dist/images/marker-icon-2x.png';
+import shadowUrlImport from 'leaflet/dist/images/marker-shadow.png';
+const MapView = () => {
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    const DefaultIcon = L.icon({
+      iconUrl: iconUrlImport.src,
+      iconRetinaUrl: iconRetinaUrlImport.src,
+      shadowUrl: shadowUrlImport.src,
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41],
+    });
+
+    L.Marker.prototype.options.icon = DefaultIcon;
+
+
+    const map = L.map(mapRef.current).setView([48.8584, 2.2945], 13);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; OpenStreetMap contributors',
+    }).addTo(map);
+
+    L.marker([48.8584, 2.2945]).addTo(map).bindPopup("Tour Eiffel").openPopup();
+
+    return () => {
+      map.remove();
+    };
+  }, []);
+
+  return <div id="mapId" ref={mapRef} className="h-[500px] w-full rounded-lg shadow" />;
+};
+
+export default MapView;

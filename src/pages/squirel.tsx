@@ -75,7 +75,7 @@ const Squirel: React.FC = () => {
                         Vivez une expérience complète et innovante !
                       </h3>
                       <p className="text-[#7A7A7A] text-center md:text-left mb-6 leading-relaxed text-sm">
-                        Nous proposons des services étendus incluant le renforcement sur les réseaux sociaux, la communication, les conseils stratégiques, la gestion de serveurs, la sécurité, la vente et la gestion d'hébergement.
+                        Nous proposons des services étendus incluant le renforcement sur les réseaux sociaux, la communication, les conseils stratégiques, la gestion de serveurs, la sécurité, la vente et la gestion {"d'hébergement"}.
                       </p>
 
                       <div className="hidden md:block absolute bottom-1 right-4">

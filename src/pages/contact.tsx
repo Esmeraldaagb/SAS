@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import AnimatedSection from '@/components/animatedSection';
-import { Send } from 'lucide-react';
-import MapLocation from '@/components/mapLocation';
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import AnimatedSection from "@/components/animatedSection";
+import { Send } from "lucide-react";
+import MapLocation from "@/components/mapLocation";
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',

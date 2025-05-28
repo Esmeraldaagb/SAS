@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription
-} from '@/components/ui/card';
-import AnimatedSection from '@/components/animatedSection';
-import { Truck, Ship, Package, ExternalLink, Car, ShoppingBag } from 'lucide-react';
-import Image from 'next/image';
+} from "@/components/ui/card";
+import AnimatedSection from "@/components/animatedSection";
+import { Ship,  ExternalLink, Car, ShoppingBag } from "lucide-react";
+import Image from "next/image";
 import img1 from "@/app/assets/iyara.png"
 
 type Service = {
@@ -23,30 +22,30 @@ const Iyara: React.FC = () => {
   const services: Service[] = [
     {
       icon: <Car className="h-5 w-5 text-[#D39E00]" />,
-      title: 'Location de vehicule',
+      title: "Location de vehicule",
       description: [
-        'Suivi en temps réel des véhicules.',
-        'Optimisation des itinéraires pour réduire les délais.',
-        'Fiabilité pour les livraisons nationales et régionales.'
+        "Suivi en temps réel des véhicules.",
+        "Optimisation des itinéraires pour réduire les délais.",
+        "Fiabilité pour les livraisons nationales et régionales."
       ]
     },
     {
       icon: <Ship className="h-5 w-5 text-[#D39E00]" />,
-      title: 'Opération Logistique',
+      title: "Opération Logistique",
       description: [
-        'Fret maritime pour l’export/import international.',
-        'Gestion complète des démarches portuaires.',
-        'Partenariats avec des compagnies maritimes de renommée.'
+        "Fret maritime pour l’export/import international.",
+        "Gestion complète des démarches portuaires.",
+        "Partenariats avec des compagnies maritimes de renommée."
       ]
     },
 
     {
       icon: <ShoppingBag className="h-5 w-5 text-[#D39E00]" />,
-      title: 'Service de livraison',
+      title: "Service de livraison",
       description: [
-        'Stockage sécurisé et inventaire en temps réel.',
-        'Préparation des commandes et expéditions automatisées.',
-        'Livraison finale à votre client avec traçabilité complète.'
+        "Stockage sécurisé et inventaire en temps réel.",
+        "Préparation des commandes et expéditions automatisées.",
+        "Livraison finale à votre client avec traçabilité complète."
       ]
     }
   ];
@@ -58,16 +57,16 @@ const Iyara: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-4xl font-bold text-[#D39E00] mb-4">Iyara</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Iyara offre une combinaison unique de diversité de flotte, de personnalisation de services et d'engagement envers la satisfaction client.
+              Iyara offre une combinaison unique de diversité de flotte, de personnalisation de services et {"d'engagement"} envers la satisfaction client.
             </p>
           </div>
         </AnimatedSection>
 
           <div className="mb-16 flex items-center justify-center">
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-              <AnimatedSection animation="fade-up">
-                  <Card key={index} className="p-2 hover:shadow-lg transition-all duration-300 border-b-4 border-[#D39E00] border-t-0 border-l-0 border-r-0">
+              {services.map((service) => (
+              <AnimatedSection key={service.title} animation="fade-up">
+                  <Card  className="p-2 hover:shadow-lg transition-all duration-300 border-b-4 border-[#D39E00] border-t-0 border-l-0 border-r-0">
                     <CardHeader className="flex flex-row items-center gap-3">
                       <div>{service.icon}</div>
                       <div>
@@ -109,7 +108,7 @@ const Iyara: React.FC = () => {
                     Vivez une expérience complète et innovante !
                   </h3>
                   <p className=" text-center text-white lg:text-[#7A7A7A] mb-6 leading-relaxed">
-                    En choisissant IYARA, vous bénéficiez d'une gamme étendue de véhicules, depuis les voitures personnelles jusqu'aux moteurs de chantier, accompagnée de solutions sur mesure adaptées à votre entreprise.
+                    En choisissant IYARA, vous bénéficiez {"d'une"} gamme étendue de véhicules, depuis les voitures personnelles {"jusqu'aux"} moteurs de chantier, accompagnée de solutions sur mesure adaptées à votre entreprise.
                   </p>
                   <div className="md:block hidden absolute bottom-1">
                     <a href="#" className="text-[#FFD700] font-semibold flex gap-2">

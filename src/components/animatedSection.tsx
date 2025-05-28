@@ -1,5 +1,5 @@
-'use client';
-import React, { useEffect, useRef, useState } from 'react';
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -20,31 +20,24 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+    const section = sectionRef.current;
+    if (!section) return;
+  
+    const handleScroll = () => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * (1 - threshold)) {
+        setIsVisible(true);
       }
     };
+  
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Vérifie dès le montage
+  
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [threshold]);
-
+  
   const animationClasses = {
     'fade-up': 'opacity-0 translate-y-8',
     'fade-in': 'opacity-0',

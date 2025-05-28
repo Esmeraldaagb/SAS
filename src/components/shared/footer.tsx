@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <div>
             <Image src="/logo.png" width={60} height={60} alt="logo" />
             <p className="text-[#BDBDBD] text-sm mt-4 mb-6 leading-relaxed">
-              Nous sommes un groupe diversifié spécialisé dans le transport, la technologie et le conseil aux entreprises cherchant à s'implanter à l'international.
+              Nous sommes un groupe diversifié spécialisé dans le transport, la technologie et le conseil aux entreprises cherchant à {"s'implanter à l'international"}.
             </p>
             <div className="flex space-x-4">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (

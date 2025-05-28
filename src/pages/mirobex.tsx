@@ -99,7 +99,7 @@ const Mirabex: React.FC = () => {
                     Pourquoi choisir Mirobex pour votre expansion internationale ?
                   </h3>
                   <p className="text-[#2C2C2C] text-sm lg:text-md mb-6 leading-relaxed">
-                    Avec plus de 15 ans d'expérience dans l'accompagnement d'entreprises à l'international, notre équipe d'experts vous guide à chaque étape de votre expansion. Nous combinons une connaissance approfondie des marchés locaux avec une vision stratégique globale.
+                    Avec plus de 15 ans {"d'expérience"} dans {"l'accompagnement d'entreprises à l'international"}, notre équipe {"d'experts"} vous guide à chaque étape de votre expansion. Nous combinons une connaissance approfondie des marchés locaux avec une vision stratégique globale.
                   </p>
 
                   <Card className="bg-[#0400f02f] lg:p-4 p-2 rounded-lg backdrop-blur-sm mb-6">
